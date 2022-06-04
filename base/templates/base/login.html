@@ -1,0 +1,39 @@
+{% extends "base/index.html"%}
+{% load static %}
+{% block title %}
+Login
+{% endblock %}
+{% block content %}
+<section class="vh-90">
+    <div class="container py-5 h-100">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    class="img-fluid" alt="Phone image">
+            </div>
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="form1Example13">User Name</label>
+                        <input type="text" id="form1Example13" name="username" class="form-control form-control-lg" />
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-4">
+                        <div class="d-flex justify-content-between">
+                            <label class=" form-label" for="form1Example23">Password</label>
+                            <a href="#!" class="text-decoration-none">Forgot password?</a>
+                        </div>
+
+                        <input type="password" id="form1Example23" name="password"
+                            class="form-control form-control-lg" />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block" style="width: 100%;">Sign in</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

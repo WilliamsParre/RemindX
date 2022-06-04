@@ -1,0 +1,15 @@
+{% extends 'base/index.html' %}
+{% load crispy_forms_tags %}
+{% block titile %}
+Update Task
+{% endblock %}
+{% block content %}
+<div class="card container col-lg-4 col-sm-12 p-4 mt-4 mb-4" style="border-radius: 10px;">
+    <h2 style="text-align: center; color:steelblue;" class="p-4"><strong>Update Task</strong></h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input class="btn btn-success mt-4" type="submit" style="width: 100%;" value="Submit" />
+    </form>
+</div>
+{% endblock %}
