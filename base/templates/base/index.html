@@ -57,10 +57,10 @@
                                 {{request.user}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="right: 0">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Change Password</a>
-                                <a class="dropdown-item" href="#">Delete Account</a>
-                                <a class="dropdown-item" href="#">Delete History</a>
+                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                                <a class="dropdown-item" href="{% url 'change_password' %}">Change Password</a>
+                                <a class="dropdown-item" href="{% url 'delete_account' %}">Delete Account</a>
+                                <a class="dropdown-item" href="{% url 'delete_history' %}">Delete History</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{% url 'logout' %}">Sign out</a>
                             </div>

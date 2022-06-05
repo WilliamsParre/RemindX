@@ -7,6 +7,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 class Profile(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     gender = models.CharField(max_length=10, choices=[(
         'Male', 'Male'), ('Female', 'Female'), ('Others', 'Others')])
     profile_pic = models.ImageField(
@@ -21,6 +23,7 @@ class Task(models.Model):
     class StatusChoices(models.TextChoices):
         Pending = 'Pending'
         Done = 'Done'
+        Due = 'Due'
 
     class Priority(models.TextChoices):
         High = 'High'

@@ -8,6 +8,7 @@ Dashboard
         <h3>Tasks</h3>
         <a class="btn btn-info" href="{% url 'add_task' %}">Add Task</a>
     </div>
+    {% if tasks > 0 %}
     <form action="" method="POST">
         {% csrf_token %}
         <div class="input-group mb-5">
@@ -15,7 +16,6 @@ Dashboard
             <input type="submit" class="btn btn-outline-primary" value="search" />
         </div>
     </form>
-    {% if tasks > 0 %}
     <div class="row">
         <div class="col-lg-4 col-sm-12">
             <p class="badge bg-danger">High</p>

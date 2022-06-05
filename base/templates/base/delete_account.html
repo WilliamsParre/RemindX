@@ -1,0 +1,32 @@
+{% extends 'base/index.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+Delete Account
+{% endblock %}
+{% block content %}
+<div class="card p-5" style="border-radius:10px;">
+    <div class="card container col-lg-7 col-sm-12 p-4 mt-4 mb-4">
+        <div class="d-flex justify-content-between mb-4">
+            <h2 class="text-secondary">Delete Account</h2>
+            <a href="{% url 'home' %}" class="btn btn-outline-dark m-2">Back</a>
+        </div>
+        <h4><span class="badge badge-secondary bg-danger">Note</span></h4>
+        <h5 class="text-justify">This action <strong>cannot</strong> be undone. This will permanently delete data
+            releated to your
+            account including your tasks and preferences.</h5>
+        <br />
+        <p>Please type <strong><i>delete account</i></strong> to confirm.</p>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-9">
+                    <input type="text" class="form-control" name="confirmation" />
+                </div>
+                <div class="col-3">
+                    <input type="submit" class="btn btn-outline-danger" value="Delete" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

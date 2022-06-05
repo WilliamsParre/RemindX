@@ -1,21 +1,21 @@
 {% extends 'base/index.html' %}
 {% load crispy_forms_tags %}
 {% block title %}
-Add Task
+Update Profile
 {% endblock %}
 {% block content %}
 <div class="card p-5" style="border-radius:10px;">
     <div class="card container col-lg-4 col-sm-12 p-4 mt-4 mb-4">
         <div class="d-flex justify-content-between mb-4">
-            <h3 class="text-secondary">Set Task</h3>
-            <a href="{% url 'home' %}" class="btn btn-danger ">Close</a>
+            <h3 class="text-secondary">Profile</h3>
+            <a href="{% url 'profile' %}" class="btn btn-danger ">Close</a>
         </div>
         <form action="" method="POST">
             {% csrf_token %}
-            {{form|crispy }}
+            {{form1|crispy}}
+            {{form2|crispy }}
             <input type="submit" class="btn btn-primary mt-4 col-12" value="Submit" />
         </form>
     </div>
-
 </div>
 {% endblock %}
