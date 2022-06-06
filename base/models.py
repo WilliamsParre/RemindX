@@ -13,7 +13,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=10, choices=[(
         'Male', 'Male'), ('Female', 'Female'), ('Others', 'Others')])
     profile_pic = models.ImageField(
-        default="default_profile_pic.jpg", blank=True)
+        default="default_profile_pic.jpg")
     phone_no = models.BigIntegerField(validators=[
         MaxValueValidator(9999999999),
         MinValueValidator(1111111111)
