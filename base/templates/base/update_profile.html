@@ -10,7 +10,7 @@ Update Profile
             <h3 class="text-secondary">Profile</h3>
             <a href="{% url 'profile' %}" class="btn btn-danger ">Close</a>
         </div>
-        <form action="" method="POST">
+        <form action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{form1|crispy}}
             {{form2|crispy }}

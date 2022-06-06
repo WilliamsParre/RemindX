@@ -168,12 +168,10 @@ def user_profile(request):
     user = User.objects.get(username=request.user.username)
     try:
         profile = Profile.objects.get(user=request.user)
-        pic = str(profile.profile_pic)
-        pic = 'base/images/'+pic.split('/')[-1]
     except Exception:
         return redirect('add_profile')
 
-    return render(request, 'base/profile.html', {'user': user, 'profile': profile, 'pic': pic})
+    return render(request, 'base/profile.html', {'user': user, 'profile': profile})
 
 
 @login_required(login_url='login')
@@ -183,7 +181,7 @@ def update_profile(request):
 
     if request.method == 'POST':
         form1 = UserChangeProfile(request.POST, instance=request.user)
-        form2 = ProfileForm(request.POST, instance=profile)
+        form2 = ProfileForm(request.POST, request.FILES, instance=profile)
         if all([form1.is_valid(), form2.is_valid()]):
             form1.save()
             form2.save()

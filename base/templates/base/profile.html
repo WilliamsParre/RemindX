@@ -8,7 +8,7 @@ Profile
     <div class="row">
         <div class="col-lg-3 col-sm-12 m-2 text-center">
             <div class="d-flex justify-content-center m-2">
-                <img src="{% static pic %}" class="rounded-circle m-3" width="150px" height="150px" />
+                <img src="{{profile.profile_pic.url}}" class="rounded-circle m-3" width="150px" height="150px" />
             </div>
             <h3>{{user.first_name}} {{user.last_name}}</h3>
             <h4 class="text-muted">( <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"

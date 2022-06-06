@@ -1,3 +1,4 @@
+from enum import unique
 from secrets import choice
 from django.db import models
 from django.contrib.auth.models import User
@@ -12,7 +13,7 @@ class Profile(models.Model):
     gender = models.CharField(max_length=10, choices=[(
         'Male', 'Male'), ('Female', 'Female'), ('Others', 'Others')])
     profile_pic = models.ImageField(
-        upload_to='base/static/base/images', default="base/static/base/images/default_profile_pic.jpg", blank=True)
+        default="default_profile_pic.jpg", blank=True)
     phone_no = models.BigIntegerField(validators=[
         MaxValueValidator(9999999999),
         MinValueValidator(1111111111)
