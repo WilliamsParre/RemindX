@@ -65,6 +65,8 @@ def signup(request):
     if request.method == 'POST':
         form = signUpForm(request.POST)
         if form.is_valid():
+            form = form.save(commit=False)
+            form.username = form.username.lower()
             form.save()
             messages.success(request, 'Registered Successfully! Login here.')
             return redirect('login')
