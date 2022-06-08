@@ -27,11 +27,12 @@ Dashboard
             {% for task in high_priority_tasks %}
             <div class="card mb-3">
                 <div class="row g-0">
-                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% else %} bg-success {% endif %}"
+                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% elif task.status == 'Done' %} bg-success {% else %} bg-secondary {% endif %}"
                         style="width: 10px;">
                     </div>
                     <div class="col-11">
-                        <div class=" card-body d-flex justify-content-between" style="height: auto;">
+                        <div class=" card-body d-flex justify-content-between {% if task.status == 'Due' %} text-muted {% endif %}"
+                            style="height: auto;">
                             <div>
                                 <h5 class="card-title">{{task.task_name}}</h5>
                                 <p class="card-text">{{task.date}} at {{task.time}}</p>
@@ -78,13 +79,14 @@ Dashboard
             </div>
             {% endif %}
             {% for task in medium_priority_tasks %}
-            <div class="card mb-3">
+            <div class="card mb-3 border border-secondary">
                 <div class="row g-0">
-                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% else %} bg-success {% endif %}"
+                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% elif task.status == 'Done' %} bg-success {% else %} bg-secondary {% endif %}"
                         style="width: 10px;">
                     </div>
                     <div class="col-11">
-                        <div class=" card-body d-flex justify-content-between" style="height: auto;">
+                        <div class=" card-body d-flex justify-content-between {% if task.status == 'Due' %} text-muted {% endif %}"
+                            style="height: auto;">
                             <div>
                                 <h5 class="card-title">{{task.task_name}}</h5>
                                 <p class="card-text">{{task.date}} at {{task.time}}</p>
@@ -133,11 +135,12 @@ Dashboard
             {% for task in low_priority_tasks %}
             <div class="card mb-3">
                 <div class="row g-0">
-                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% else %} bg-success {% endif %}"
+                    <div class="col-1 {% if task.status == 'Pending' %} bg-danger {% elif task.status == 'Done' %} bg-success {% else %} bg-secondary {% endif %}"
                         style="width: 10px;">
                     </div>
                     <div class="col-11">
-                        <div class=" card-body d-flex justify-content-between" style="height: auto;">
+                        <div class=" card-body d-flex justify-content-between {% if task.status == 'Due' %} text-muted {% endif %}"
+                            style="height: auto;">
                             <div>
                                 <h5 class="card-title">{{task.task_name}}</h5>
                                 <p class="card-text">{{task.date}} at {{task.time}}</p>
