@@ -179,6 +179,8 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
+CSRF_TRUSTED_ORIGINS = ['remindx.azurewebsites.net']
+
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
 # SECURE_SSL_REDIRECT = True
